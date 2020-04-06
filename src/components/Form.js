@@ -1,21 +1,20 @@
 import React from 'react';
 
-const Form = ({clickHandler}) => {
+const Form = ({handleClick, handleSubmit, value}) => {
 
-  const onClickHandler = e => {
-    clickHandler(e.target.value)
-  }
+  
 
   return (
     <div className='content'>
-      <form className='content__form'>
+      <form className='content__form' onSubmit={handleSubmit}>
           <input
               className='content__form--input'
               name='filter'
-              type='search'
-              onChange={onClickHandler}
+              type='text'
+              onChange={handleClick}
               placeholder='Search...'
               id='search'
+              value={value}
           />
       </form>
     </div> 

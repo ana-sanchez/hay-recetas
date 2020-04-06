@@ -7,7 +7,7 @@ const ListRecipe = ({value, recipes}) => {
   return ( 
     <ul>
       {recipes
-        // .filter(item => value === '' || item.title.toLowerCase().includes(value))
+        .filter(item => value === '' || item.title.toLowerCase().includes(value))
         .map(recipe => {
           return <li>
             <Recipe 
