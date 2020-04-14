@@ -5,11 +5,11 @@ import Recipe from './Recipe';
 const ListRecipe = ({value, recipes}) => {
 
   return ( 
-    <ul>
+    <ul className='wrapper'>
       {recipes
         .filter(item => value === '' || item.title.toLowerCase().includes(value))
         .map(recipe => {
-          return <li>
+          return <li className='wrapper__recipe'>
             <Recipe 
               recipe={recipe}
              />

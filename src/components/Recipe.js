@@ -6,11 +6,12 @@ const Recipe = ({recipe}) => {
 
   const urlImage = "https://spoonacular.com/recipeImages/";
   return (
-    <div>
-      <h1>{recipe.title}</h1>
-      <p>{recipe.readyInMinutes}</p>
-      <img src={urlImage + recipe.image}  alt={recipe.title} />
-     </div>
+    <React.Fragment>
+      <h1 className='wrapper__recipe--title'>{recipe.title}</h1>
+      <p className='wrapper__recipe--minutes'>{recipe.readyInMinutes} '</p>
+      <img  className='wrapper__recipe--image' src={urlImage + recipe.image}  alt={recipe.title} />
+    </React.Fragment>
+      
   )
 }
  

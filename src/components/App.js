@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/App.scss';
 import { fetchRecipe } from '../services/Api'
-// import { Route, Switch } from 'react-router-dom';
 import Form from './Form'
 import ListRecipe from './ListRecipe'
+import Home from './Home'
+import Description from './Description'
+import { Route, Switch } from 'react-router-dom';
 
 
 const App = () => {
@@ -26,12 +28,29 @@ const App = () => {
   const handleSubmit = e => {
     e.preventDefault()
   }
-
+  
+  const renderRecipes = () => {
+    return <div>
+        <Form 
+          handleClick={handleClick} 
+          handleSubmit={handleSubmit} 
+          value={value}
+        />
+        <ListRecipe 
+          recipes={recipes} 
+          value={value}
+        />
+    </div>
+    }
 
   return ( 
     <div className="App">
-      <Form handleClick={handleClick} handleSubmit={handleSubmit} value={value} />
-      <ListRecipe recipes={recipes} value={value}/>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/description' component={Description} />
+        <Route path='/recipes' render={renderRecipes} />
+      </Switch>
+  
     </div>
    );
 }

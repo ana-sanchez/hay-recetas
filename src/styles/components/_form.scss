@@ -1,0 +1,31 @@
+.content {
+
+  &__form {
+    margin: 20px;
+
+    &--search {
+      border: rem(1) solid #F0836E;
+      border-radius: rem(5);
+      width: rem(150);
+      height: auto;
+      font-family: 'Open Sans', sans-serif;
+      font-size:rem(12);
+      color:  #F0836E;
+      padding: 5px;
+      margin-right: rem(20);
+    }
+
+    &--select {
+      border: rem(1) solid #F0836E;
+      height: auto;
+      font-family: 'Open Sans', sans-serif;
+      font-size:rem(14);
+      width: rem(30);
+      color:  #F0836E;
+      background-color: white;
+      border-radius: rem(5);
+    }
+
+  }
+
+}
